@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdfhl-trans"
+version = "1.0.0"
+description = "PDF Highlight Contextual Translator using Gemini AI"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+keywords = ["pdf", "translation", "highlight", "gemini", "ai", "arabic", "rtl", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "PyMuPDF>=1.24.0",
+    "google-genai>=1.0.0",
+    "questionary>=2.0.0",
+    "python-bidi>=0.4.2",
+    "pydantic>=2.0.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+pdfhl-trans = "pdfhl_trans.main:main"
+
+[project.urls]
+Homepage = "https://github.com/YusufSuleiman/pdf-highlight-ai-translator"
+Repository = "https://github.com/YusufSuleiman/pdf-highlight-ai-translator"
+Issues = "https://github.com/YusufSuleiman/pdf-highlight-ai-translator/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdfhl_trans*"]
